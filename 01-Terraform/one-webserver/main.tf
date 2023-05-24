@@ -7,11 +7,19 @@ resource "aws_instance" "example" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.instance.id]
 
+<<<<<<< HEAD
   user_data = <<-EOF
 							#! /bin/bash
 							echo "Hello World" > index.html
 							nohup busybox httpd -f -p ${var.server_port} &
 							EOF
+=======
+	user_data = <<-EOF
+		    #! /bin/bash
+		    echo "Hello World" > index.html
+		    nohup busybox httpd -f -p 8080 &
+		    EOF
+>>>>>>> e943efadca020c5ec02cdf5a2ec173ff19043708
 
   tags = {
     Name = "aws03-example"
