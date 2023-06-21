@@ -10,3 +10,4 @@ resource "aws_instance" "example" {
 		Name = "aws03-example"
 	}
 }
+
